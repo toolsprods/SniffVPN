@@ -1,10 +1,16 @@
+![Version](https://img.shields.io/badge/SniffVPN-0.1%20--%20Alfa%20Version-red.svg?style=flat-square)
+![License](https://img.shields.io/badge/license-GNU-green.svg?style=flat-square)
+![Supported Python versions](https://img.shields.io/badge/python-2.7-blue.svg?style=flat-square)
+![Supported OS](https://img.shields.io/badge/Supported%20OS-Linux-yellow.svg?style=flat-square)
+
 # SniffVPN
 
 SniffVPN is a tool for Linux written in Python that logs all HTTP requests that are made through our VPN connection.
 
 This allows collection of information about URLs that pass through the VPN in order to analyze them for possible malware. (ToDo)
 
-## Prerequisities
+Prerequisities
+==============
 
 You need to have configured a VPN with OpenVPN and installed Scapy and tcpdump for the SniffVPN works:
 
@@ -12,7 +18,8 @@ You need to have configured a VPN with OpenVPN and installed Scapy and tcpdump f
 sudo apt-get install python-scapy tcpdump
 ```
 
-## Installing
+Installing
+==========
 
 To start SniffVPN simply run:
 
@@ -26,10 +33,12 @@ You can run the program without saving the logs by running:
 python SniffVPN.py --nologs
 ```
 
-## Authors
+Authors
+=======
 
 **Álvaro Núñez** - <toolsprods@gmail.com>
 
-## License
+License
+=======
 
 This project is licensed under the GNU General Public License - see the LICENSE.md file for details
