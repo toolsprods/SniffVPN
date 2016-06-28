@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SniffVPN Control Panel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery -->
+  <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Google Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="css/theme.css">
+  <!-- Functions JS -->
+  <script src="js/functions.js"></script>
+  <!-- Bootpag JS -->
+  <script type="text/javascript" src="js/jquery.bootpag.min.js"></script>
+</head>
+<body onload="onLoad()" onresize="resize()">
+
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header" id="navbarhead">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">SniffVPN</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav">
+        <li id="navitem0" class="navitemactive"><button id="navbtn0" type="button" onclick="goDashboard()" class="navbaritem">Dashboard</button></li>
+        <li id="navitem1"><button id="navbtn1" type="button" onclick="goStatistics()" class="navbaritem">Statistics</button></li>
+        <li id="navitem2"><button id="navbtn2" type="button" onclick="goLogs()" class="navbaritem">Logs</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+
+    <div class="col-sm-2 sidenav hidden-xs">
+      <h1>SniffVPN</h1>
+      <ul class="nav nav-pills nav-stacked">
+        <li id="item0" class="itemactive"><button id="btn0" type="button" onclick="goDashboard()" class="sidenavitem">Dashboard</button></li>
+        <li id="item1"><button id="btn1" type="button" onclick="goStatistics()" class="sidenavitem">Statistics</button></li>
+        <li id="item2"><button id="btn2" type="button" onclick="goLogs()" class="sidenavitem" href="#none">Logs</button></li>
+      </ul><br>
+    </div>
+    
+    <div id="overviewpanel" class="col-sm-10">
+
+      <div class="title">
+        <h2>Overview</h2>
+      </div>
+
+      <hr>
+
+      <div id="dashboard" class="row">
+        <div class="col-sm-6 paneldashboard">
+          <h3><span class="material-icons">history</span> Latest URLs visited</h3>
+          <div id="dbvisitlist"></div>
+          <div id="dbvisit" style="text-align: center;"></div>
+        </div>
+        <div class="col-sm-6 paneldashboard">
+          <h3><span class="material-icons">visibility</span> Latest malicious URLs analyzed</h3>
+          <div id="dbanalyslist"></div>
+          <div id="dbanalys" style="text-align: center;"></div>
+          <canvas id="dbanalysgraph" height="20"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="staticspanel" class="col-sm-10" hidden="true">
+
+      <div class="title">
+        <h2>Statics</h2>
+      </div>
+
+      <hr>
+
+      <div id="tablestatics">
+      </div>
+
+      <div id="paginationstatics" style="text-align: center">
+      </div>
+      
+    </div>
+
+    <div id="logspanel" class="col-sm-10" hidden="true">
+
+      <div class="title">
+        <h2>Logs</h2>
+      </div>
+
+      <hr>
+
+      <div id="tablelogs">
+      </div>
+
+      <div id="paginationlogs" style="text-align: center">
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

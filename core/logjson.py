@@ -18,9 +18,11 @@
 #You should have received a copy of the GNU General Public License
 #along with SniffVPN.  If not, see <http://www.gnu.org/licenses/>.
 
-import logging
+import json
 
-def write_logger(time,iporig,ipsrc,ipdst,portsrc,portdst,url):
-  log = open("sniffvpn.log", "a")
-  log.write(time+" | "+iporig+" | "+ipsrc+" | "+ipdst+" | "+ portsrc+" | "+portdst+" | "+url+"\n")
-  log.close()
+def write_logjson(time,iporig,ipsrc,ipdst,portsrc,portdst,url):
+  data = '{"time":"'+time+'","iporig":"'+iporig+'","ipsrc":"'+ipsrc+'","ipdst":"'+ipdst+'","portsrc":"'+portsrc+'","portdst":"'+portdst+'","url":"'+url+'"},'
+
+  filejson = open("panel/data/logs.json", "a")
+  filejson.write(data)
+  filejson.close()

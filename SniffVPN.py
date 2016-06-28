@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2016 Alvaro Nuñez
+# Copyright (c) 2016 Alvaro Nunez
 #
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
@@ -34,11 +34,16 @@ from argparse import RawTextHelpFormatter
 from scapy.all import *
 from core.banners import get_banner
 from core.logger import write_logger
+from core.logjson import write_logjson
+from core.vtanalyzer import vtanalyzer
+from panel.server import *
 
 ## CONTEXT VARIABLES ##
 version='0.1'
 codename='Alpha version'
 interface='tun0' #Define the interface, tun0 for VPN
+serverip = get_ip_address(interface)
+serverport = 8000
 count=0
 logs=None
 
@@ -65,13 +70,16 @@ def packet(x):
       resource=list[0]
       host=list[1]
       url=host[6:]+resource[5:(len(resource)-9)]
-      #IPs info for logs
+      #Info for logs
       time=x.sprintf("%pkt.time%")
       ipsrc=x.sprintf("%IP.src%")
       ipdst=x.sprintf("%IP.dst%")
       portsrc=x.sprintf("%IP.sport%")
       portdst=x.sprintf("%IP.dport%")
       iporig=getOriginalIP(ipsrc)
+      if host[6:] != (serverip + ":" + str(serverport)):
+        write_logjson(time,iporig,ipsrc,ipdst,portsrc,portdst,url)
+        vtanalyzer(url)
       if logs:
         write_logger(time,iporig,ipsrc,ipdst,portsrc,portdst,url)
     return url+"\n"
@@ -94,6 +102,9 @@ def main():
   logs=args.nologs
   if detectVPN():
     print get_banner()
+    start_server(serverport)
+    print chr(27) + "[0;92m" + '[*] Running server at ' + serverip + ':' + str(serverport) + '...'
+    print '[*] Can see statics and logs at ' + serverip + ':' + str(serverport) + '/panel\n' + chr(27) + "[0;0m"
     #Start sniff, method from scapy
     sniff(iface=interface, prn=packet, count=count)
   else:

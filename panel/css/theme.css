@@ -1,0 +1,183 @@
+body {
+	margin-left: auto;
+    margin-right: auto;
+	padding-bottom: 25px;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+	background-color: #252830;
+    color: #ffffff;
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    src: url(helveticaneue.woff);
+}
+
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+.navbar-inverse {
+    background-color: #252830;
+    border-color: #252830;
+}
+
+.navbaritem {
+	text-align: left;
+	background-color: transparent;
+    border-color: transparent;
+	color: #9d9d9d;
+	padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 0px;
+}
+
+.navbaritem:hover {
+	text-align: left;
+	background-color: transparent;
+    border-color: transparent;
+	color: #ffffff;
+	padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 0px;
+    border-radius: 4px;
+}
+
+.navitemactive {
+	background-color: #000000;
+    border-color: transparent;
+	border-radius: 4px;
+}
+
+.sidenav {
+	padding-top: 15px;
+}
+
+.sidenavitem {
+	text-align: left;
+	background-color: transparent;
+    border-color: transparent;
+	color: #ffffff;
+	padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 0px;
+}
+
+.sidenavitem:hover {
+	text-align: left;
+	background-color: #eeeeee;
+    border-color: transparent;
+	color: #337ab7;
+	padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 0px;
+    border-radius: 4px;
+}
+
+.itemactive {
+	background-color: #1ca8dd;
+    border-color: transparent;
+	border-radius: 4px;
+}
+
+.title {
+	padding-left: 15px;
+    background-color: #252830;
+    margin-bottom: 20px;
+    min-height: 20px;
+}
+
+th {
+	text-align: left;
+	padding-left: 10px;
+}
+
+table {
+	margin-bottom: 21px;
+	max-width: 100%;
+	width: 100%;
+}
+
+.cl > tbody > tr > td {
+    border-top: 1px solid #434857;
+    line-height: 1.5;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.cl > tbody > tr > th {
+	border-top: none;
+    border-bottom: 2px solid #434857;
+    line-height: 1.5;
+    padding: 8px;
+    vertical-align: bottom;
+}
+
+.db > tr > td {
+    border-top: 1px solid #434857;
+    line-height: 1.5;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.pagination > li > a,  .pagination > li > button{
+    background-color: transparent;
+    border: 1px solid #434857;
+    color: #51586a;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+.pagination > li > button:hover{
+    background-color: #eee;
+    border-color: #ddd;
+    color: #23527c;
+    z-index: 2;
+}
+
+.pagination > li:first-child > button {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    margin-left: 0;
+}
+
+.pagination > li:last-child > button {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.pagination > li > a:hover{
+    background-color: #eee;
+    border-color: #ddd;
+    color: #23527c;
+    z-index: 2;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    background-color: #51586a;
+    border-color: #51586a;
+    color: #fff;
+    cursor: default;
+    z-index: 3;
+}
+
+.paneldashboard {
+    padding: 10px 20px 0px 50px;
+}
