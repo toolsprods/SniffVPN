@@ -38,7 +38,7 @@ Authors
 
 **Álvaro Núñez** - <toolsprods@gmail.com>
 
-**Original idea: Chema Alonso** - <elladodelmal.com>
+**Original idea: Chema Alonso** - elladodelmal.com
 
 License
 =======
