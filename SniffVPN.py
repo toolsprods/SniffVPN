@@ -25,6 +25,7 @@ The author is not responsible for any misuse of the application!
 
 ## LIBRARIES ##
 import os
+import subprocess
 import logging
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 
@@ -39,7 +40,7 @@ from core.vtanalyzer import vtanalyzer
 from panel.server import *
 
 ## CONTEXT VARIABLES ##
-version='0.1'
+version='0.2'
 codename='Alpha version'
 interface='tun0' #Define the interface, tun0 for VPN
 serverip = get_ip_address(interface)
@@ -59,7 +60,9 @@ def parse_args():
 
 #Function to detect if VPN is installed
 def detectVPN():
-  return(os.path.isdir("/etc/openvpn"))
+  #return(os.path.isdir("/etc/openvpn"))
+  output = subprocess.check_output("ifconfig | grep " + interface + " | wc -l", shell=True)
+  return output[0]
 
 #Function to get the urls, http only
 def packet(x):
@@ -100,7 +103,7 @@ def main():
   args=parse_args()
   #interface=args.interface
   logs=args.nologs
-  if detectVPN():
+  if detectVPN() == '1':
     print get_banner()
     start_server(serverport)
     print chr(27) + "[0;92m" + '[*] Running server at ' + serverip + ':' + str(serverport) + '...'
@@ -108,6 +111,6 @@ def main():
     #Start sniff, method from scapy
     sniff(iface=interface, prn=packet, count=count)
   else:
-    print 'Installing OpenVPN undetected.\nPlease check OpenVPN is installed correctly'
+    print 'Installing OpenVPN undetected\nPlease check OpenVPN is installed correctly'
 
 main()
