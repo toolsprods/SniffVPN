@@ -193,7 +193,8 @@ function tableStatics(page) {
 				'<td>' + result + '</td></tr>'
 			}
 			else
-				to += 1
+				if (to < data.vtanalyzer.length)
+					to += 1
 		}
 		table += '</table>';
 
