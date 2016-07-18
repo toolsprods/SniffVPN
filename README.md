@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/SniffVPN-0.2%20--%20Alfa%20Version-red.svg?style=flat-square)
+![Version](https://img.shields.io/badge/SniffVPN-0.2%20--%20Beta%20Version-red.svg?style=flat-square)
 ![License](https://img.shields.io/badge/license-GNU-green.svg?style=flat-square)
 ![Supported Python versions](https://img.shields.io/badge/python-2.7-blue.svg?style=flat-square)
 ![Supported OS](https://img.shields.io/badge/Supported%20OS-Linux-yellow.svg?style=flat-square)
@@ -38,7 +38,7 @@ Authors
 
 **Álvaro Núñez** - <toolsprods@gmail.com>
 
-**Original idea: Chema Alonso** - elladodelmal.com
+**Original idea: Chema Alonso** - [www.elladodelmal.com](http://www.elladodelmal.com)
 
 License
 =======

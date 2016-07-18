@@ -25,7 +25,7 @@ info ="""
 [---]         SniffVPN - Traffic monitor for your VPN          [---]
 [---]          Created by: Alvaro Nunez (toolsprods)           [---]
 [---]                     Version: 0.2                         [---]
-[---]                Codename: 'Alfa Version'                  [---]
+[---]                Codename: 'Beta Version'                  [---]
 [---]        Follow me on GitHub: github.com/toolsprods/       [---]
 """
 
@@ -34,7 +34,7 @@ infocol = "\n"
 infocol += chr(27) + "[0;94m" + "[---]         SniffVPN - Traffic monitor for your VPN          [---]\n"
 infocol += "[---]          Created by: " + chr(27) + "[0;91m" + "Alvaro Nunez " + chr(27)+"[0;94m" + "(" + chr(27)+"[0;92m" + "toolsprods" + chr(27)+"[0;94m" + ")           [---]\n"
 infocol += "[---]                     Version: " + chr(27) + "[0;91m" + "0.2                         " + chr(27) + "[0;94m" + "[---]\n"
-infocol += "[---]                Codename: '" + chr(27) + "[0;93m" + "Alfa Version" + chr(27) + "[0;94m" + "'                  [---]\n"
+infocol += "[---]                Codename: '" + chr(27) + "[0;93m" + "Beta Version" + chr(27) + "[0;94m" + "'                  [---]\n"
 infocol += "[---]        Follow me on GitHub: " + chr(27) + "[0;95m" + "github.com/toolsprods/       " + chr(27) + "[0;94m" + "[---]\n"+ chr(27)+"[0m"
 
 # Banner 1

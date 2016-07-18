@@ -41,7 +41,7 @@ from panel.server import *
 
 ## CONTEXT VARIABLES ##
 version='0.2'
-codename='Alpha version'
+codename='Beta version'
 interface='tun0' #Define the interface, tun0 for VPN
 serverip = get_ip_address(interface)
 serverport = 8000
